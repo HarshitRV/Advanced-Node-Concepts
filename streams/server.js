@@ -79,7 +79,7 @@ app.route("/bad").get(async (req, res) => {
 
         res.writeHead(206, {
             "Content-Range": `bytes ${start}-${end}/${size}`,
-            "Accept-Range": "byted",
+            "Accept-Ranges": "bytes",
             "Content-Length": (end - start) + 1,
             "Content-Type": 'video/mp4'
         })
@@ -110,7 +110,7 @@ app.route("/good").get(async (req, res) => {
 
         res.writeHead(206, {
             "Content-Range": `bytes ${start}-${end}/${size}`,
-            "Accept-Range": "byted",
+            "Accept-Ranges": "bytes",
             "Content-Length": (end - start) + 1,
             "Content-Type": 'video/mp4'
         })
